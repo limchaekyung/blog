@@ -22,7 +22,7 @@ const WriteActionButtons = ({onCancle, onPublish, isEdit}) => {
     return(
         <WriteActionButtonBlock>
             <StyledButton yellow onClick={onPublish}>
-                포스트 {isEdit ? '수정' : '등록'}
+                포스트 {isEdit ? '등록' : '수정'}
             </StyledButton>
             <StyledButton onClick={onCancle}>취소</StyledButton>
         </WriteActionButtonBlock>
