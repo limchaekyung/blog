@@ -70,7 +70,7 @@ const PostList = ({posts, loading, error, showWriteButton}) => {
             <WritePostButtonWrapper>
                 {showWriteButton && (
                     <Button yellow to="/write">
-                        새 글 정리하기
+                        새 글 작성
                     </Button>
                 )}
             </WritePostButtonWrapper>
