@@ -61,8 +61,15 @@ const Editor = ({title, body, onChangeField}) => {
             if(source === 'user'){
                 onChangeField({key: 'body', value: quill.root.innerHTML});
             }
-        })
+        });
     }, [onChangeField]);
+
+    const mounted = useRef(false);
+    useEffect(() => {
+        if(mounted.current) return;
+        mounted.current = true;
+        quillInstance.current.root.innerHTML = body;
+    }, [body]);
 
     const onChangeTitle = e => {
         onChangeField({key: 'title', value: e.target.value});
@@ -78,7 +85,7 @@ const Editor = ({title, body, onChangeField}) => {
                 <div ref={quillElement} />
             </QuillWrapper>
         </EditorBlock>
-    )
-}
+    );
+};
 
 export default Editor;

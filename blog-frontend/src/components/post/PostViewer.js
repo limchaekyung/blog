@@ -20,38 +20,12 @@ const PostHead = styled.div`
     }
 `;
 
-// const SubInfo = styled.div`
-//     margin-top: 1rem;
-//     color: ${palette.gray[6]};
-
-//     /* span 사이에 가운뎃점 문자 보여 주기 */
-//     span + span:before{
-//         color: ${palette.gray[5]};
-//         padding-left: 0.25rem;
-//         padding-right: 0.25rem;
-//         content: '\\B7';
-//     }
-// `;
-
-// const Tags = styled.div`
-//     margin-top: 0.5rem;
-//     .tag{
-//         dispatch: inline-block;
-//         color: ${palette.yellow[7]};
-//         text-decoration: none;
-//         margin-right: 0.5rem;
-//         &:hover{
-//             color: ${palette.yellow[6]};
-//         }
-//     }
-// `;
-
 const PostContent = styled.div`
     font-size: 1.3125rem;
     color: ${palette.gray[8]};
 `;
 
-const PostViewer = ({post, error, loading}) => {
+const PostViewer = ({post, error, loading, actionButtons}) => {
 
     // 에러 발생 시
     if(error){
@@ -79,6 +53,7 @@ const PostViewer = ({post, error, loading}) => {
                 />
                 <Tags tags={tags}/>
             </PostHead>
+            {actionButtons}
             <PostContent
                 dangerouslySetInnerHTML={{__html: body}}
             />
